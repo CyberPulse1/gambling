@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"> <!-- Changed to English and LTR -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Battle Simulator (Demo)</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Case Battle Simulator</h1>
+        <div class="balance-display">
+            <img src="https://placehold.co/24x24/FFD700/000000?text=C" alt="Coin">
+            <span id="playerBalance">1000</span>
+        </div>
+
+        <div class="group-code-section">
+            <h2>Group Code</h2>
+            <div class="group-code-buttons">
+                <button id="createGroupCodeBtn">Create Group Code</button>
+                <input type="text" id="joinGroupInput" class="join-group-input" placeholder="Enter code to join...">
+                <button id="joinGroupBtn">Join Group</button>
+            </div>
+            <div class="group-code-display" id="myGroupCode" style="display: none;"></div>
+            <div class="message" id="groupMessage"></div>
+            
+            <div class="battle-mode-selection">
+                <input type="radio" id="mode1v1" name="battleMode" value="1v1" checked>
+                <label for="mode1v1">1v1</label>
+                <input type="radio" id="mode2v2" name="battleMode" value="2v2">
+                <label for="mode2v2">2v2</label>
+                <input type="radio" id="mode3v3" name="battleMode" value="3v3">
+                <label for="mode3v3">3v3</label>
+            </div>
+
+            <!-- This div is for setup/pre-battle display of group members -->
+            <div class="group-members" id="setupGroupMembers">
+                <div class="player-side player-you">
+                    <span class="player-slot you">You</span>
+                </div>
+                <div class="player-side player-opponents">
+                    <!-- Opponents will be added here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="case-selection-section">
+            <h2>Select Cases for Battle</h2>
+            <div class="case-selection-grid" id="caseSelectionGrid">
+                <!-- Cases will be dynamically loaded here -->
+            </div>
+
+            <div class="battle-setup">
+                <div class="selected-cases-list-wrapper">
+                    <h3>Selected Cases for Battle:</h3>
+                    <div class="selected-cases-list" id="selectedCasesList">
+                        <!-- Selected cases will appear here -->
+                    </div>
+                </div>
+                <div class="total-cost">Total Cost: <span id="totalBattleCost">0</span> Coins</div>
+                <button id="startBattleBtn">Start Battle</button>
+            </div>
+        </div>
+
+        <div class="opening-section" id="openingSection">
+            <h2 class="opening-header">Opening Cases...</h2>
+            
+            <!-- This container will hold individual player battle lanes -->
+            <div class="battle-lanes-container" id="battleLanesContainer">
+                <!-- Player battle lanes will be dynamically inserted here -->
+            </div>
+
+            <div class="team-total-scores" id="teamTotalScores">
+                <div>Your Team Total: <span id="yourTeamScore">0</span> Coins</div>
+                <div>Opponents Total: <span id="opponentTeamScore">0</span> Coins</div>
+            </div>
+        </div>
+
+        <div class="battle-results" id="battleResultsSection" style="display: none;">
+            <h2 class="winner-declaration" id="finalWinnerDeclaration"></h2>
+            <h2>Items You Won</h2>
+            <div class="result-item-grid" id="battleResultsGrid">
+                <!-- Final results for YOUR team will appear here -->
+            </div>
+            <button id="backToSelectionBtn">Back to Case Selection</button>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="main.js" defer></script>
+</body>
+</html>
